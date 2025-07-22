@@ -4,5 +4,4 @@ matplotlib
 plotly
 biopython
 bcbio-gff
-mafft
 flask
