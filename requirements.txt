@@ -2,3 +2,7 @@ requests
 pandas
 matplotlib
 plotly
+biopython
+bcbio-gff
+mafft
+flask
