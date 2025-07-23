@@ -5,22 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fermon Annotation Converter</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .figures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .figures figure {
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .figures img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-
     <h1>Fermon Annotation Converter</h1>
 
-    <!-- Genome visuals -->
-    <figure>
-      <img src="images/evd68_virion.svg" alt="EV-D68 virion" style="max-width: 100%; height: auto;">
-      <figcaption>Figure 1: EV-D68 virion structure (adapted from ViralZone).</figcaption>
-    </figure>
-
-    <figure>
-      <img src="images/evd68_genome.svg" alt="EV-D68 genome" style="max-width: 100%; height: auto;">
-      <figcaption>Figure 2: EV-D68 genome map (adapted from ViralZone).</figcaption>
-    </figure>
+    <!-- Genome visuals side by side -->
+    <div class="figures">
+      <figure>
+        <img src="images/evd68_virion.svg" alt="EV-D68 virion">
+        <figcaption>EV-D68 virion structure</figcaption>
+      </figure>
+      <figure>
+        <img src="images/evd68_genome.svg" alt="EV-D68 genome">
+        <figcaption>EV-D68 genome map</figcaption>
+      </figure>
+    </div>
 
     <!-- Conversion form -->
     <form id="conversionForm" enctype="multipart/form-data">

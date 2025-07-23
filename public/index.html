@@ -5,10 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fermon Annotation Converter</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .figures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .figures figure {
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .figures img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Fermon Annotation Converter</h1>
+
+    <!-- Genome visuals side by side -->
+    <div class="figures">
+      <figure>
+        <img src="images/evd68_virion.svg" alt="EV-D68 virion">
+        <figcaption>EV-D68 virion structure</figcaption>
+      </figure>
+      <figure>
+        <img src="images/evd68_genome.svg" alt="EV-D68 genome">
+        <figcaption>EV-D68 genome map</figcaption>
+      </figure>
+    </div>
+
+    <!-- Conversion form -->
     <form id="conversionForm" enctype="multipart/form-data">
       <div>
         <label for="nt">Nucleotide Position:</label>
@@ -20,11 +54,13 @@
       </div>
       <button type="submit">Convert</button>
     </form>
+
+    <!-- Result display -->
     <div id="result"></div>
   </div>
 
-  <!-- Include lookup table and script logic -->
+  <!-- Scripts -->
   <script src="lookup.js"></script>
-  <script src="static/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
