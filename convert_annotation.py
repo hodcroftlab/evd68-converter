@@ -42,16 +42,24 @@ class FermonAnnotation:
         return (gene, aa_pos)
 
     def get_new_vp1_position(self, vp1_pos: int) -> int:
-        """Return new VP1 position with -12 offset, raise if out of range."""
+        """Return new VP1 position with -12 offset, raise if out of range. Return new VP3 position for VP1 remapping."""
         vp1 = self.features.get("VP1")
-        if not vp1:
-            raise ValueError("VP1 feature not found in reference.")
+        vp3 = self.features.get("VP3")
+        if not vp1 or not vp3:
+            raise ValueError("VP1 or VP3 feature not found in reference.")
 
         vp1_len = (int(vp1.location.end) - int(vp1.location.start))// 3 + 12
+        vp3_len = (int(vp3.location.end) - int(vp3.location.start))// 3
+
         if not (1 <= vp1_pos <= vp1_len):
             raise ValueError(f"VP1 position {vp1_pos} is out of bounds (1-{vp1_len}).")
 
-        return max(1, vp1_pos - 12)
+        if 1 <= vp1_pos <= 12:
+            # VP1 positions 1-12 are part of VP3
+            aa_pos = vp3_len - (12 - vp1_pos)
+            return ("VP3", aa_pos)
+        
+        return ("VP1", vp1_pos - 12)
 
     def align_to_fermon(self, query_fasta: str, aligned_out: str):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -90,12 +98,12 @@ if __name__ == "__main__":
     ann = FermonAnnotation(args.reference)
 
     if args.nt is not None:
-        gene = ann.get_gene_for_nt(args.nt)
-        print(f"Nucleotide {args.nt} → Gene: {gene}")
+        gene,aa = ann.get_gene_for_nt(args.nt)
+        print(f"Nucleotide {args.nt} → Gene: {gene}, Amino Acid Position: {aa}")
 
     if args.vp1 is not None:
-        new_pos = ann.get_new_vp1_position(args.vp1)
-        print(f"VP1 position {args.vp1} → New VP1 position: {new_pos}")
+        gene, aa = ann.get_new_vp1_position(args.vp1)
+        print(f"VP1 position {args.vp1} → Gene: {gene}, Amino Acid Position: {aa}")
 
     if args.query:
         with tempfile.NamedTemporaryFile("w+", suffix=".fa") as out:
@@ -113,10 +121,10 @@ if __name__ == "__main__":
                 gene, aa_pos = gene_info
                 lookup[f"nt_{nt_pos}"] = {"gene": gene, "aa": aa_pos}
 
-        for vp1 in range(1, 400):  # Adjust upper bound if needed
+        for vp1 in range(1, 309):  # Adjust upper bound if needed
             try:
-                new_pos = ann.get_new_vp1_position(vp1)
-                lookup[f"vp1_{vp1}"] = {"new_vp1": new_pos}
+                gene, aa = ann.get_new_vp1_position(vp1)
+                lookup[f"vp1_{vp1}"] = {"gene": gene, "aa": aa}
             except ValueError:
                 continue
 
