@@ -55,8 +55,8 @@ jobs:
           python convert_annotation.py reference.gbk --export
           # Create output folder for deployment
           mkdir -p public
-          # Copy lookup.js and index.html to deployment folder
-          cp lookup.js index.html public/
+          # Copy to deployment folder
+          cp lookup.js index.html static/js/script.js static/css/style.css public/
 
       # Step 5: Upload generated content to GitHub Pages artifact storage
       - name: Upload artifact to GitHub Pages
