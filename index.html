@@ -8,7 +8,21 @@
 </head>
 <body>
   <div class="container">
+
     <h1>Fermon Annotation Converter</h1>
+
+    <!-- Genome visuals -->
+    <figure>
+      <img src="images/evd68_virion.svg" alt="EV-D68 virion" style="max-width: 100%; height: auto;">
+      <figcaption>Figure 1: EV-D68 virion structure (adapted from ViralZone).</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/evd68_genome.svg" alt="EV-D68 genome" style="max-width: 100%; height: auto;">
+      <figcaption>Figure 2: EV-D68 genome map (adapted from ViralZone).</figcaption>
+    </figure>
+
+    <!-- Conversion form -->
     <form id="conversionForm" enctype="multipart/form-data">
       <div>
         <label for="nt">Nucleotide Position:</label>
@@ -20,11 +34,13 @@
       </div>
       <button type="submit">Convert</button>
     </form>
+
+    <!-- Result display -->
     <div id="result"></div>
   </div>
 
-  <!-- Include lookup table and script logic -->
+  <!-- Scripts -->
   <script src="lookup.js"></script>
-  <script src="static/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
