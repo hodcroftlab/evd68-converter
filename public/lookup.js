@@ -26256,930 +26256,1235 @@ const lookup = {
     "aa": 457
   },
   "vp1_1": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 236
   },
   "vp1_2": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 237
   },
   "vp1_3": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 238
   },
   "vp1_4": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 239
   },
   "vp1_5": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 240
   },
   "vp1_6": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 241
   },
   "vp1_7": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 242
   },
   "vp1_8": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 243
   },
   "vp1_9": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 244
   },
   "vp1_10": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 245
   },
   "vp1_11": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 246
   },
   "vp1_12": {
-    "new_vp1": 1
+    "gene": "VP3",
+    "aa": 247
   },
   "vp1_13": {
-    "new_vp1": 1
+    "gene": "VP1",
+    "aa": 1
   },
   "vp1_14": {
-    "new_vp1": 2
+    "gene": "VP1",
+    "aa": 2
   },
   "vp1_15": {
-    "new_vp1": 3
+    "gene": "VP1",
+    "aa": 3
   },
   "vp1_16": {
-    "new_vp1": 4
+    "gene": "VP1",
+    "aa": 4
   },
   "vp1_17": {
-    "new_vp1": 5
+    "gene": "VP1",
+    "aa": 5
   },
   "vp1_18": {
-    "new_vp1": 6
+    "gene": "VP1",
+    "aa": 6
   },
   "vp1_19": {
-    "new_vp1": 7
+    "gene": "VP1",
+    "aa": 7
   },
   "vp1_20": {
-    "new_vp1": 8
+    "gene": "VP1",
+    "aa": 8
   },
   "vp1_21": {
-    "new_vp1": 9
+    "gene": "VP1",
+    "aa": 9
   },
   "vp1_22": {
-    "new_vp1": 10
+    "gene": "VP1",
+    "aa": 10
   },
   "vp1_23": {
-    "new_vp1": 11
+    "gene": "VP1",
+    "aa": 11
   },
   "vp1_24": {
-    "new_vp1": 12
+    "gene": "VP1",
+    "aa": 12
   },
   "vp1_25": {
-    "new_vp1": 13
+    "gene": "VP1",
+    "aa": 13
   },
   "vp1_26": {
-    "new_vp1": 14
+    "gene": "VP1",
+    "aa": 14
   },
   "vp1_27": {
-    "new_vp1": 15
+    "gene": "VP1",
+    "aa": 15
   },
   "vp1_28": {
-    "new_vp1": 16
+    "gene": "VP1",
+    "aa": 16
   },
   "vp1_29": {
-    "new_vp1": 17
+    "gene": "VP1",
+    "aa": 17
   },
   "vp1_30": {
-    "new_vp1": 18
+    "gene": "VP1",
+    "aa": 18
   },
   "vp1_31": {
-    "new_vp1": 19
+    "gene": "VP1",
+    "aa": 19
   },
   "vp1_32": {
-    "new_vp1": 20
+    "gene": "VP1",
+    "aa": 20
   },
   "vp1_33": {
-    "new_vp1": 21
+    "gene": "VP1",
+    "aa": 21
   },
   "vp1_34": {
-    "new_vp1": 22
+    "gene": "VP1",
+    "aa": 22
   },
   "vp1_35": {
-    "new_vp1": 23
+    "gene": "VP1",
+    "aa": 23
   },
   "vp1_36": {
-    "new_vp1": 24
+    "gene": "VP1",
+    "aa": 24
   },
   "vp1_37": {
-    "new_vp1": 25
+    "gene": "VP1",
+    "aa": 25
   },
   "vp1_38": {
-    "new_vp1": 26
+    "gene": "VP1",
+    "aa": 26
   },
   "vp1_39": {
-    "new_vp1": 27
+    "gene": "VP1",
+    "aa": 27
   },
   "vp1_40": {
-    "new_vp1": 28
+    "gene": "VP1",
+    "aa": 28
   },
   "vp1_41": {
-    "new_vp1": 29
+    "gene": "VP1",
+    "aa": 29
   },
   "vp1_42": {
-    "new_vp1": 30
+    "gene": "VP1",
+    "aa": 30
   },
   "vp1_43": {
-    "new_vp1": 31
+    "gene": "VP1",
+    "aa": 31
   },
   "vp1_44": {
-    "new_vp1": 32
+    "gene": "VP1",
+    "aa": 32
   },
   "vp1_45": {
-    "new_vp1": 33
+    "gene": "VP1",
+    "aa": 33
   },
   "vp1_46": {
-    "new_vp1": 34
+    "gene": "VP1",
+    "aa": 34
   },
   "vp1_47": {
-    "new_vp1": 35
+    "gene": "VP1",
+    "aa": 35
   },
   "vp1_48": {
-    "new_vp1": 36
+    "gene": "VP1",
+    "aa": 36
   },
   "vp1_49": {
-    "new_vp1": 37
+    "gene": "VP1",
+    "aa": 37
   },
   "vp1_50": {
-    "new_vp1": 38
+    "gene": "VP1",
+    "aa": 38
   },
   "vp1_51": {
-    "new_vp1": 39
+    "gene": "VP1",
+    "aa": 39
   },
   "vp1_52": {
-    "new_vp1": 40
+    "gene": "VP1",
+    "aa": 40
   },
   "vp1_53": {
-    "new_vp1": 41
+    "gene": "VP1",
+    "aa": 41
   },
   "vp1_54": {
-    "new_vp1": 42
+    "gene": "VP1",
+    "aa": 42
   },
   "vp1_55": {
-    "new_vp1": 43
+    "gene": "VP1",
+    "aa": 43
   },
   "vp1_56": {
-    "new_vp1": 44
+    "gene": "VP1",
+    "aa": 44
   },
   "vp1_57": {
-    "new_vp1": 45
+    "gene": "VP1",
+    "aa": 45
   },
   "vp1_58": {
-    "new_vp1": 46
+    "gene": "VP1",
+    "aa": 46
   },
   "vp1_59": {
-    "new_vp1": 47
+    "gene": "VP1",
+    "aa": 47
   },
   "vp1_60": {
-    "new_vp1": 48
+    "gene": "VP1",
+    "aa": 48
   },
   "vp1_61": {
-    "new_vp1": 49
+    "gene": "VP1",
+    "aa": 49
   },
   "vp1_62": {
-    "new_vp1": 50
+    "gene": "VP1",
+    "aa": 50
   },
   "vp1_63": {
-    "new_vp1": 51
+    "gene": "VP1",
+    "aa": 51
   },
   "vp1_64": {
-    "new_vp1": 52
+    "gene": "VP1",
+    "aa": 52
   },
   "vp1_65": {
-    "new_vp1": 53
+    "gene": "VP1",
+    "aa": 53
   },
   "vp1_66": {
-    "new_vp1": 54
+    "gene": "VP1",
+    "aa": 54
   },
   "vp1_67": {
-    "new_vp1": 55
+    "gene": "VP1",
+    "aa": 55
   },
   "vp1_68": {
-    "new_vp1": 56
+    "gene": "VP1",
+    "aa": 56
   },
   "vp1_69": {
-    "new_vp1": 57
+    "gene": "VP1",
+    "aa": 57
   },
   "vp1_70": {
-    "new_vp1": 58
+    "gene": "VP1",
+    "aa": 58
   },
   "vp1_71": {
-    "new_vp1": 59
+    "gene": "VP1",
+    "aa": 59
   },
   "vp1_72": {
-    "new_vp1": 60
+    "gene": "VP1",
+    "aa": 60
   },
   "vp1_73": {
-    "new_vp1": 61
+    "gene": "VP1",
+    "aa": 61
   },
   "vp1_74": {
-    "new_vp1": 62
+    "gene": "VP1",
+    "aa": 62
   },
   "vp1_75": {
-    "new_vp1": 63
+    "gene": "VP1",
+    "aa": 63
   },
   "vp1_76": {
-    "new_vp1": 64
+    "gene": "VP1",
+    "aa": 64
   },
   "vp1_77": {
-    "new_vp1": 65
+    "gene": "VP1",
+    "aa": 65
   },
   "vp1_78": {
-    "new_vp1": 66
+    "gene": "VP1",
+    "aa": 66
   },
   "vp1_79": {
-    "new_vp1": 67
+    "gene": "VP1",
+    "aa": 67
   },
   "vp1_80": {
-    "new_vp1": 68
+    "gene": "VP1",
+    "aa": 68
   },
   "vp1_81": {
-    "new_vp1": 69
+    "gene": "VP1",
+    "aa": 69
   },
   "vp1_82": {
-    "new_vp1": 70
+    "gene": "VP1",
+    "aa": 70
   },
   "vp1_83": {
-    "new_vp1": 71
+    "gene": "VP1",
+    "aa": 71
   },
   "vp1_84": {
-    "new_vp1": 72
+    "gene": "VP1",
+    "aa": 72
   },
   "vp1_85": {
-    "new_vp1": 73
+    "gene": "VP1",
+    "aa": 73
   },
   "vp1_86": {
-    "new_vp1": 74
+    "gene": "VP1",
+    "aa": 74
   },
   "vp1_87": {
-    "new_vp1": 75
+    "gene": "VP1",
+    "aa": 75
   },
   "vp1_88": {
-    "new_vp1": 76
+    "gene": "VP1",
+    "aa": 76
   },
   "vp1_89": {
-    "new_vp1": 77
+    "gene": "VP1",
+    "aa": 77
   },
   "vp1_90": {
-    "new_vp1": 78
+    "gene": "VP1",
+    "aa": 78
   },
   "vp1_91": {
-    "new_vp1": 79
+    "gene": "VP1",
+    "aa": 79
   },
   "vp1_92": {
-    "new_vp1": 80
+    "gene": "VP1",
+    "aa": 80
   },
   "vp1_93": {
-    "new_vp1": 81
+    "gene": "VP1",
+    "aa": 81
   },
   "vp1_94": {
-    "new_vp1": 82
+    "gene": "VP1",
+    "aa": 82
   },
   "vp1_95": {
-    "new_vp1": 83
+    "gene": "VP1",
+    "aa": 83
   },
   "vp1_96": {
-    "new_vp1": 84
+    "gene": "VP1",
+    "aa": 84
   },
   "vp1_97": {
-    "new_vp1": 85
+    "gene": "VP1",
+    "aa": 85
   },
   "vp1_98": {
-    "new_vp1": 86
+    "gene": "VP1",
+    "aa": 86
   },
   "vp1_99": {
-    "new_vp1": 87
+    "gene": "VP1",
+    "aa": 87
   },
   "vp1_100": {
-    "new_vp1": 88
+    "gene": "VP1",
+    "aa": 88
   },
   "vp1_101": {
-    "new_vp1": 89
+    "gene": "VP1",
+    "aa": 89
   },
   "vp1_102": {
-    "new_vp1": 90
+    "gene": "VP1",
+    "aa": 90
   },
   "vp1_103": {
-    "new_vp1": 91
+    "gene": "VP1",
+    "aa": 91
   },
   "vp1_104": {
-    "new_vp1": 92
+    "gene": "VP1",
+    "aa": 92
   },
   "vp1_105": {
-    "new_vp1": 93
+    "gene": "VP1",
+    "aa": 93
   },
   "vp1_106": {
-    "new_vp1": 94
+    "gene": "VP1",
+    "aa": 94
   },
   "vp1_107": {
-    "new_vp1": 95
+    "gene": "VP1",
+    "aa": 95
   },
   "vp1_108": {
-    "new_vp1": 96
+    "gene": "VP1",
+    "aa": 96
   },
   "vp1_109": {
-    "new_vp1": 97
+    "gene": "VP1",
+    "aa": 97
   },
   "vp1_110": {
-    "new_vp1": 98
+    "gene": "VP1",
+    "aa": 98
   },
   "vp1_111": {
-    "new_vp1": 99
+    "gene": "VP1",
+    "aa": 99
   },
   "vp1_112": {
-    "new_vp1": 100
+    "gene": "VP1",
+    "aa": 100
   },
   "vp1_113": {
-    "new_vp1": 101
+    "gene": "VP1",
+    "aa": 101
   },
   "vp1_114": {
-    "new_vp1": 102
+    "gene": "VP1",
+    "aa": 102
   },
   "vp1_115": {
-    "new_vp1": 103
+    "gene": "VP1",
+    "aa": 103
   },
   "vp1_116": {
-    "new_vp1": 104
+    "gene": "VP1",
+    "aa": 104
   },
   "vp1_117": {
-    "new_vp1": 105
+    "gene": "VP1",
+    "aa": 105
   },
   "vp1_118": {
-    "new_vp1": 106
+    "gene": "VP1",
+    "aa": 106
   },
   "vp1_119": {
-    "new_vp1": 107
+    "gene": "VP1",
+    "aa": 107
   },
   "vp1_120": {
-    "new_vp1": 108
+    "gene": "VP1",
+    "aa": 108
   },
   "vp1_121": {
-    "new_vp1": 109
+    "gene": "VP1",
+    "aa": 109
   },
   "vp1_122": {
-    "new_vp1": 110
+    "gene": "VP1",
+    "aa": 110
   },
   "vp1_123": {
-    "new_vp1": 111
+    "gene": "VP1",
+    "aa": 111
   },
   "vp1_124": {
-    "new_vp1": 112
+    "gene": "VP1",
+    "aa": 112
   },
   "vp1_125": {
-    "new_vp1": 113
+    "gene": "VP1",
+    "aa": 113
   },
   "vp1_126": {
-    "new_vp1": 114
+    "gene": "VP1",
+    "aa": 114
   },
   "vp1_127": {
-    "new_vp1": 115
+    "gene": "VP1",
+    "aa": 115
   },
   "vp1_128": {
-    "new_vp1": 116
+    "gene": "VP1",
+    "aa": 116
   },
   "vp1_129": {
-    "new_vp1": 117
+    "gene": "VP1",
+    "aa": 117
   },
   "vp1_130": {
-    "new_vp1": 118
+    "gene": "VP1",
+    "aa": 118
   },
   "vp1_131": {
-    "new_vp1": 119
+    "gene": "VP1",
+    "aa": 119
   },
   "vp1_132": {
-    "new_vp1": 120
+    "gene": "VP1",
+    "aa": 120
   },
   "vp1_133": {
-    "new_vp1": 121
+    "gene": "VP1",
+    "aa": 121
   },
   "vp1_134": {
-    "new_vp1": 122
+    "gene": "VP1",
+    "aa": 122
   },
   "vp1_135": {
-    "new_vp1": 123
+    "gene": "VP1",
+    "aa": 123
   },
   "vp1_136": {
-    "new_vp1": 124
+    "gene": "VP1",
+    "aa": 124
   },
   "vp1_137": {
-    "new_vp1": 125
+    "gene": "VP1",
+    "aa": 125
   },
   "vp1_138": {
-    "new_vp1": 126
+    "gene": "VP1",
+    "aa": 126
   },
   "vp1_139": {
-    "new_vp1": 127
+    "gene": "VP1",
+    "aa": 127
   },
   "vp1_140": {
-    "new_vp1": 128
+    "gene": "VP1",
+    "aa": 128
   },
   "vp1_141": {
-    "new_vp1": 129
+    "gene": "VP1",
+    "aa": 129
   },
   "vp1_142": {
-    "new_vp1": 130
+    "gene": "VP1",
+    "aa": 130
   },
   "vp1_143": {
-    "new_vp1": 131
+    "gene": "VP1",
+    "aa": 131
   },
   "vp1_144": {
-    "new_vp1": 132
+    "gene": "VP1",
+    "aa": 132
   },
   "vp1_145": {
-    "new_vp1": 133
+    "gene": "VP1",
+    "aa": 133
   },
   "vp1_146": {
-    "new_vp1": 134
+    "gene": "VP1",
+    "aa": 134
   },
   "vp1_147": {
-    "new_vp1": 135
+    "gene": "VP1",
+    "aa": 135
   },
   "vp1_148": {
-    "new_vp1": 136
+    "gene": "VP1",
+    "aa": 136
   },
   "vp1_149": {
-    "new_vp1": 137
+    "gene": "VP1",
+    "aa": 137
   },
   "vp1_150": {
-    "new_vp1": 138
+    "gene": "VP1",
+    "aa": 138
   },
   "vp1_151": {
-    "new_vp1": 139
+    "gene": "VP1",
+    "aa": 139
   },
   "vp1_152": {
-    "new_vp1": 140
+    "gene": "VP1",
+    "aa": 140
   },
   "vp1_153": {
-    "new_vp1": 141
+    "gene": "VP1",
+    "aa": 141
   },
   "vp1_154": {
-    "new_vp1": 142
+    "gene": "VP1",
+    "aa": 142
   },
   "vp1_155": {
-    "new_vp1": 143
+    "gene": "VP1",
+    "aa": 143
   },
   "vp1_156": {
-    "new_vp1": 144
+    "gene": "VP1",
+    "aa": 144
   },
   "vp1_157": {
-    "new_vp1": 145
+    "gene": "VP1",
+    "aa": 145
   },
   "vp1_158": {
-    "new_vp1": 146
+    "gene": "VP1",
+    "aa": 146
   },
   "vp1_159": {
-    "new_vp1": 147
+    "gene": "VP1",
+    "aa": 147
   },
   "vp1_160": {
-    "new_vp1": 148
+    "gene": "VP1",
+    "aa": 148
   },
   "vp1_161": {
-    "new_vp1": 149
+    "gene": "VP1",
+    "aa": 149
   },
   "vp1_162": {
-    "new_vp1": 150
+    "gene": "VP1",
+    "aa": 150
   },
   "vp1_163": {
-    "new_vp1": 151
+    "gene": "VP1",
+    "aa": 151
   },
   "vp1_164": {
-    "new_vp1": 152
+    "gene": "VP1",
+    "aa": 152
   },
   "vp1_165": {
-    "new_vp1": 153
+    "gene": "VP1",
+    "aa": 153
   },
   "vp1_166": {
-    "new_vp1": 154
+    "gene": "VP1",
+    "aa": 154
   },
   "vp1_167": {
-    "new_vp1": 155
+    "gene": "VP1",
+    "aa": 155
   },
   "vp1_168": {
-    "new_vp1": 156
+    "gene": "VP1",
+    "aa": 156
   },
   "vp1_169": {
-    "new_vp1": 157
+    "gene": "VP1",
+    "aa": 157
   },
   "vp1_170": {
-    "new_vp1": 158
+    "gene": "VP1",
+    "aa": 158
   },
   "vp1_171": {
-    "new_vp1": 159
+    "gene": "VP1",
+    "aa": 159
   },
   "vp1_172": {
-    "new_vp1": 160
+    "gene": "VP1",
+    "aa": 160
   },
   "vp1_173": {
-    "new_vp1": 161
+    "gene": "VP1",
+    "aa": 161
   },
   "vp1_174": {
-    "new_vp1": 162
+    "gene": "VP1",
+    "aa": 162
   },
   "vp1_175": {
-    "new_vp1": 163
+    "gene": "VP1",
+    "aa": 163
   },
   "vp1_176": {
-    "new_vp1": 164
+    "gene": "VP1",
+    "aa": 164
   },
   "vp1_177": {
-    "new_vp1": 165
+    "gene": "VP1",
+    "aa": 165
   },
   "vp1_178": {
-    "new_vp1": 166
+    "gene": "VP1",
+    "aa": 166
   },
   "vp1_179": {
-    "new_vp1": 167
+    "gene": "VP1",
+    "aa": 167
   },
   "vp1_180": {
-    "new_vp1": 168
+    "gene": "VP1",
+    "aa": 168
   },
   "vp1_181": {
-    "new_vp1": 169
+    "gene": "VP1",
+    "aa": 169
   },
   "vp1_182": {
-    "new_vp1": 170
+    "gene": "VP1",
+    "aa": 170
   },
   "vp1_183": {
-    "new_vp1": 171
+    "gene": "VP1",
+    "aa": 171
   },
   "vp1_184": {
-    "new_vp1": 172
+    "gene": "VP1",
+    "aa": 172
   },
   "vp1_185": {
-    "new_vp1": 173
+    "gene": "VP1",
+    "aa": 173
   },
   "vp1_186": {
-    "new_vp1": 174
+    "gene": "VP1",
+    "aa": 174
   },
   "vp1_187": {
-    "new_vp1": 175
+    "gene": "VP1",
+    "aa": 175
   },
   "vp1_188": {
-    "new_vp1": 176
+    "gene": "VP1",
+    "aa": 176
   },
   "vp1_189": {
-    "new_vp1": 177
+    "gene": "VP1",
+    "aa": 177
   },
   "vp1_190": {
-    "new_vp1": 178
+    "gene": "VP1",
+    "aa": 178
   },
   "vp1_191": {
-    "new_vp1": 179
+    "gene": "VP1",
+    "aa": 179
   },
   "vp1_192": {
-    "new_vp1": 180
+    "gene": "VP1",
+    "aa": 180
   },
   "vp1_193": {
-    "new_vp1": 181
+    "gene": "VP1",
+    "aa": 181
   },
   "vp1_194": {
-    "new_vp1": 182
+    "gene": "VP1",
+    "aa": 182
   },
   "vp1_195": {
-    "new_vp1": 183
+    "gene": "VP1",
+    "aa": 183
   },
   "vp1_196": {
-    "new_vp1": 184
+    "gene": "VP1",
+    "aa": 184
   },
   "vp1_197": {
-    "new_vp1": 185
+    "gene": "VP1",
+    "aa": 185
   },
   "vp1_198": {
-    "new_vp1": 186
+    "gene": "VP1",
+    "aa": 186
   },
   "vp1_199": {
-    "new_vp1": 187
+    "gene": "VP1",
+    "aa": 187
   },
   "vp1_200": {
-    "new_vp1": 188
+    "gene": "VP1",
+    "aa": 188
   },
   "vp1_201": {
-    "new_vp1": 189
+    "gene": "VP1",
+    "aa": 189
   },
   "vp1_202": {
-    "new_vp1": 190
+    "gene": "VP1",
+    "aa": 190
   },
   "vp1_203": {
-    "new_vp1": 191
+    "gene": "VP1",
+    "aa": 191
   },
   "vp1_204": {
-    "new_vp1": 192
+    "gene": "VP1",
+    "aa": 192
   },
   "vp1_205": {
-    "new_vp1": 193
+    "gene": "VP1",
+    "aa": 193
   },
   "vp1_206": {
-    "new_vp1": 194
+    "gene": "VP1",
+    "aa": 194
   },
   "vp1_207": {
-    "new_vp1": 195
+    "gene": "VP1",
+    "aa": 195
   },
   "vp1_208": {
-    "new_vp1": 196
+    "gene": "VP1",
+    "aa": 196
   },
   "vp1_209": {
-    "new_vp1": 197
+    "gene": "VP1",
+    "aa": 197
   },
   "vp1_210": {
-    "new_vp1": 198
+    "gene": "VP1",
+    "aa": 198
   },
   "vp1_211": {
-    "new_vp1": 199
+    "gene": "VP1",
+    "aa": 199
   },
   "vp1_212": {
-    "new_vp1": 200
+    "gene": "VP1",
+    "aa": 200
   },
   "vp1_213": {
-    "new_vp1": 201
+    "gene": "VP1",
+    "aa": 201
   },
   "vp1_214": {
-    "new_vp1": 202
+    "gene": "VP1",
+    "aa": 202
   },
   "vp1_215": {
-    "new_vp1": 203
+    "gene": "VP1",
+    "aa": 203
   },
   "vp1_216": {
-    "new_vp1": 204
+    "gene": "VP1",
+    "aa": 204
   },
   "vp1_217": {
-    "new_vp1": 205
+    "gene": "VP1",
+    "aa": 205
   },
   "vp1_218": {
-    "new_vp1": 206
+    "gene": "VP1",
+    "aa": 206
   },
   "vp1_219": {
-    "new_vp1": 207
+    "gene": "VP1",
+    "aa": 207
   },
   "vp1_220": {
-    "new_vp1": 208
+    "gene": "VP1",
+    "aa": 208
   },
   "vp1_221": {
-    "new_vp1": 209
+    "gene": "VP1",
+    "aa": 209
   },
   "vp1_222": {
-    "new_vp1": 210
+    "gene": "VP1",
+    "aa": 210
   },
   "vp1_223": {
-    "new_vp1": 211
+    "gene": "VP1",
+    "aa": 211
   },
   "vp1_224": {
-    "new_vp1": 212
+    "gene": "VP1",
+    "aa": 212
   },
   "vp1_225": {
-    "new_vp1": 213
+    "gene": "VP1",
+    "aa": 213
   },
   "vp1_226": {
-    "new_vp1": 214
+    "gene": "VP1",
+    "aa": 214
   },
   "vp1_227": {
-    "new_vp1": 215
+    "gene": "VP1",
+    "aa": 215
   },
   "vp1_228": {
-    "new_vp1": 216
+    "gene": "VP1",
+    "aa": 216
   },
   "vp1_229": {
-    "new_vp1": 217
+    "gene": "VP1",
+    "aa": 217
   },
   "vp1_230": {
-    "new_vp1": 218
+    "gene": "VP1",
+    "aa": 218
   },
   "vp1_231": {
-    "new_vp1": 219
+    "gene": "VP1",
+    "aa": 219
   },
   "vp1_232": {
-    "new_vp1": 220
+    "gene": "VP1",
+    "aa": 220
   },
   "vp1_233": {
-    "new_vp1": 221
+    "gene": "VP1",
+    "aa": 221
   },
   "vp1_234": {
-    "new_vp1": 222
+    "gene": "VP1",
+    "aa": 222
   },
   "vp1_235": {
-    "new_vp1": 223
+    "gene": "VP1",
+    "aa": 223
   },
   "vp1_236": {
-    "new_vp1": 224
+    "gene": "VP1",
+    "aa": 224
   },
   "vp1_237": {
-    "new_vp1": 225
+    "gene": "VP1",
+    "aa": 225
   },
   "vp1_238": {
-    "new_vp1": 226
+    "gene": "VP1",
+    "aa": 226
   },
   "vp1_239": {
-    "new_vp1": 227
+    "gene": "VP1",
+    "aa": 227
   },
   "vp1_240": {
-    "new_vp1": 228
+    "gene": "VP1",
+    "aa": 228
   },
   "vp1_241": {
-    "new_vp1": 229
+    "gene": "VP1",
+    "aa": 229
   },
   "vp1_242": {
-    "new_vp1": 230
+    "gene": "VP1",
+    "aa": 230
   },
   "vp1_243": {
-    "new_vp1": 231
+    "gene": "VP1",
+    "aa": 231
   },
   "vp1_244": {
-    "new_vp1": 232
+    "gene": "VP1",
+    "aa": 232
   },
   "vp1_245": {
-    "new_vp1": 233
+    "gene": "VP1",
+    "aa": 233
   },
   "vp1_246": {
-    "new_vp1": 234
+    "gene": "VP1",
+    "aa": 234
   },
   "vp1_247": {
-    "new_vp1": 235
+    "gene": "VP1",
+    "aa": 235
   },
   "vp1_248": {
-    "new_vp1": 236
+    "gene": "VP1",
+    "aa": 236
   },
   "vp1_249": {
-    "new_vp1": 237
+    "gene": "VP1",
+    "aa": 237
   },
   "vp1_250": {
-    "new_vp1": 238
+    "gene": "VP1",
+    "aa": 238
   },
   "vp1_251": {
-    "new_vp1": 239
+    "gene": "VP1",
+    "aa": 239
   },
   "vp1_252": {
-    "new_vp1": 240
+    "gene": "VP1",
+    "aa": 240
   },
   "vp1_253": {
-    "new_vp1": 241
+    "gene": "VP1",
+    "aa": 241
   },
   "vp1_254": {
-    "new_vp1": 242
+    "gene": "VP1",
+    "aa": 242
   },
   "vp1_255": {
-    "new_vp1": 243
+    "gene": "VP1",
+    "aa": 243
   },
   "vp1_256": {
-    "new_vp1": 244
+    "gene": "VP1",
+    "aa": 244
   },
   "vp1_257": {
-    "new_vp1": 245
+    "gene": "VP1",
+    "aa": 245
   },
   "vp1_258": {
-    "new_vp1": 246
+    "gene": "VP1",
+    "aa": 246
   },
   "vp1_259": {
-    "new_vp1": 247
+    "gene": "VP1",
+    "aa": 247
   },
   "vp1_260": {
-    "new_vp1": 248
+    "gene": "VP1",
+    "aa": 248
   },
   "vp1_261": {
-    "new_vp1": 249
+    "gene": "VP1",
+    "aa": 249
   },
   "vp1_262": {
-    "new_vp1": 250
+    "gene": "VP1",
+    "aa": 250
   },
   "vp1_263": {
-    "new_vp1": 251
+    "gene": "VP1",
+    "aa": 251
   },
   "vp1_264": {
-    "new_vp1": 252
+    "gene": "VP1",
+    "aa": 252
   },
   "vp1_265": {
-    "new_vp1": 253
+    "gene": "VP1",
+    "aa": 253
   },
   "vp1_266": {
-    "new_vp1": 254
+    "gene": "VP1",
+    "aa": 254
   },
   "vp1_267": {
-    "new_vp1": 255
+    "gene": "VP1",
+    "aa": 255
   },
   "vp1_268": {
-    "new_vp1": 256
+    "gene": "VP1",
+    "aa": 256
   },
   "vp1_269": {
-    "new_vp1": 257
+    "gene": "VP1",
+    "aa": 257
   },
   "vp1_270": {
-    "new_vp1": 258
+    "gene": "VP1",
+    "aa": 258
   },
   "vp1_271": {
-    "new_vp1": 259
+    "gene": "VP1",
+    "aa": 259
   },
   "vp1_272": {
-    "new_vp1": 260
+    "gene": "VP1",
+    "aa": 260
   },
   "vp1_273": {
-    "new_vp1": 261
+    "gene": "VP1",
+    "aa": 261
   },
   "vp1_274": {
-    "new_vp1": 262
+    "gene": "VP1",
+    "aa": 262
   },
   "vp1_275": {
-    "new_vp1": 263
+    "gene": "VP1",
+    "aa": 263
   },
   "vp1_276": {
-    "new_vp1": 264
+    "gene": "VP1",
+    "aa": 264
   },
   "vp1_277": {
-    "new_vp1": 265
+    "gene": "VP1",
+    "aa": 265
   },
   "vp1_278": {
-    "new_vp1": 266
+    "gene": "VP1",
+    "aa": 266
   },
   "vp1_279": {
-    "new_vp1": 267
+    "gene": "VP1",
+    "aa": 267
   },
   "vp1_280": {
-    "new_vp1": 268
+    "gene": "VP1",
+    "aa": 268
   },
   "vp1_281": {
-    "new_vp1": 269
+    "gene": "VP1",
+    "aa": 269
   },
   "vp1_282": {
-    "new_vp1": 270
+    "gene": "VP1",
+    "aa": 270
   },
   "vp1_283": {
-    "new_vp1": 271
+    "gene": "VP1",
+    "aa": 271
   },
   "vp1_284": {
-    "new_vp1": 272
+    "gene": "VP1",
+    "aa": 272
   },
   "vp1_285": {
-    "new_vp1": 273
+    "gene": "VP1",
+    "aa": 273
   },
   "vp1_286": {
-    "new_vp1": 274
+    "gene": "VP1",
+    "aa": 274
   },
   "vp1_287": {
-    "new_vp1": 275
+    "gene": "VP1",
+    "aa": 275
   },
   "vp1_288": {
-    "new_vp1": 276
+    "gene": "VP1",
+    "aa": 276
   },
   "vp1_289": {
-    "new_vp1": 277
+    "gene": "VP1",
+    "aa": 277
   },
   "vp1_290": {
-    "new_vp1": 278
+    "gene": "VP1",
+    "aa": 278
   },
   "vp1_291": {
-    "new_vp1": 279
+    "gene": "VP1",
+    "aa": 279
   },
   "vp1_292": {
-    "new_vp1": 280
+    "gene": "VP1",
+    "aa": 280
   },
   "vp1_293": {
-    "new_vp1": 281
+    "gene": "VP1",
+    "aa": 281
   },
   "vp1_294": {
-    "new_vp1": 282
+    "gene": "VP1",
+    "aa": 282
   },
   "vp1_295": {
-    "new_vp1": 283
+    "gene": "VP1",
+    "aa": 283
   },
   "vp1_296": {
-    "new_vp1": 284
+    "gene": "VP1",
+    "aa": 284
   },
   "vp1_297": {
-    "new_vp1": 285
+    "gene": "VP1",
+    "aa": 285
   },
   "vp1_298": {
-    "new_vp1": 286
+    "gene": "VP1",
+    "aa": 286
   },
   "vp1_299": {
-    "new_vp1": 287
+    "gene": "VP1",
+    "aa": 287
   },
   "vp1_300": {
-    "new_vp1": 288
+    "gene": "VP1",
+    "aa": 288
   },
   "vp1_301": {
-    "new_vp1": 289
+    "gene": "VP1",
+    "aa": 289
   },
   "vp1_302": {
-    "new_vp1": 290
+    "gene": "VP1",
+    "aa": 290
   },
   "vp1_303": {
-    "new_vp1": 291
+    "gene": "VP1",
+    "aa": 291
   },
   "vp1_304": {
-    "new_vp1": 292
+    "gene": "VP1",
+    "aa": 292
   },
   "vp1_305": {
-    "new_vp1": 293
+    "gene": "VP1",
+    "aa": 293
   },
   "vp1_306": {
-    "new_vp1": 294
+    "gene": "VP1",
+    "aa": 294
   },
   "vp1_307": {
-    "new_vp1": 295
+    "gene": "VP1",
+    "aa": 295
   },
   "vp1_308": {
-    "new_vp1": 296
-  },
-  "vp1_309": {
-    "new_vp1": 297
+    "gene": "VP1",
+    "aa": 296
   }
 };

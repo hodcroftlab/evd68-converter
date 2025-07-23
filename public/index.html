@@ -24,23 +24,24 @@
       width: 100%;
       height: auto;
     }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Fermon Annotation Converter</h1>
 
-    <!-- Genome visuals side by side -->
+    <!-- Visuals side-by-side -->
     <div class="figures">
-      <figure>
-        <img src="images/evd68_virion.svg" alt="EV-D68 virion">
-        <figcaption>EV-D68 virion structure</figcaption>
-      </figure>
-      <figure>
-        <img src="images/evd68_genome.svg" alt="EV-D68 genome">
-        <figcaption>EV-D68 genome map</figcaption>
-      </figure>
-    </div>
+        <figure>
+          <img src="images/evd68_genome.svg" alt="EV-D68 genome">
+          <figcaption>
+            Figure: EV-D68 genome and virion; adapted from
+            <a href="https://viralzone.expasy.org/97?outline=all_by_species" target="_blank">ViralZone</a>
+          </figcaption>
+        </figure>
+      </div>
+      
 
     <!-- Conversion form -->
     <form id="conversionForm" enctype="multipart/form-data">
@@ -61,6 +62,7 @@
 
   <!-- Scripts -->
   <script src="lookup.js"></script>
-  <script src="script.js"></script>
+  <script src="static/js/script.js"></script>
+  <script src="static/css/style.css"></script>
 </body>
 </html>

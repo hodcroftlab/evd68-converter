@@ -5,21 +5,21 @@ document.getElementById("conversionForm").addEventListener("submit", function (e
     const vp1 = document.getElementById("vp1").value;
     const resultDiv = document.getElementById("result");
   
-    // Clear result by default
+    // Clear previous result
     resultDiv.innerText = "";
   
     if (vp1) {
-      // If VP1 is filled, ignore NT field
-      if (lookup[`vp1_${vp1}`]) {
-        const { new_vp1 } = lookup[`vp1_${vp1}`];
-        resultDiv.innerText = `Remapped VP1 Position: ${new_vp1}`;
+      const key = `vp1_${vp1}`;
+      if (lookup[key]) {
+        const { gene, aa } = lookup[key];
+        resultDiv.innerText = `VP1 pos ${vp1} → Gene: ${gene}, Amino Acid Position: ${aa}`;
       } else {
         resultDiv.innerText = "VP1 position not found (1-309).";
       }
     } else if (nt) {
-      // Only use NT if VP1 is empty
-      if (lookup[`nt_${nt}`]) {
-        const { gene, aa } = lookup[`nt_${nt}`];
+      const key = `nt_${nt}`;
+      if (lookup[key]) {
+        const { gene, aa } = lookup[key];
         resultDiv.innerText = `Gene: ${gene}, Amino Acid Position: ${aa}`;
       } else {
         resultDiv.innerText = "Nucleotide position not found (733-7296).";

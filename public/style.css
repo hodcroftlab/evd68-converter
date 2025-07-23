@@ -2,18 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
 }
 .container {
+    max-width: 800px;
+    margin: 2rem auto;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 input, button {
     margin: 10px 0;
@@ -29,3 +26,15 @@ button {
 button:hover {
     background-color: #45a049;
 }
+figure {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+body, h1, h2, h3, label, input, button, figcaption {
+    font-family: Arial, sans-serif;
+  }
