@@ -32,8 +32,9 @@ figure {
 }
 
 figure img {
-    max-width: 100%;
+    width: 1000px;   /* or any desired size */
     height: auto;
+    display: block;
 }
 body, h1, h2, h3, label, input, button, figcaption {
     font-family: Arial, sans-serif;
