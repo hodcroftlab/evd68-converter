@@ -5,6 +5,7 @@ import tempfile
 from pathlib import Path
 from typing import Optional
 from BCBio import GFF
+import json
 
 class FermonAnnotation:
     def __init__(self, reference_path: str):
@@ -83,6 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("--nt", type=int, help="Nucleotide position to query")
     parser.add_argument("--vp1", type=int, help="VP1 position to remap")
     parser.add_argument("--query", help="Optional FASTA file to align")
+    parser.add_argument("--export", action="store_true", help="Export lookup to lookup.js")
     args = parser.parse_args()
 
     ann = FermonAnnotation(args.reference)
@@ -99,6 +101,27 @@ if __name__ == "__main__":
         with tempfile.NamedTemporaryFile("w+", suffix=".fa") as out:
             ann.align_to_fermon(args.query, out.name)
             aligned = ann.parse_alignment(out.name)
-            # for name, seq in aligned.items():
-            #     print(f">{name}\n{seq}")
+            
+        print("Sequence aligned to Fermon")
+
+    if args.export:
+        lookup = {}
+
+        for nt_pos in sorted(ann.nt_to_gene.keys()):
+            gene_info = ann.get_gene_for_nt(nt_pos)
+            if gene_info:
+                gene, aa_pos = gene_info
+                lookup[f"nt_{nt_pos}"] = {"gene": gene, "aa": aa_pos}
+
+        for vp1 in range(1, 400):  # Adjust upper bound if needed
+            try:
+                new_pos = ann.get_new_vp1_position(vp1)
+                lookup[f"vp1_{vp1}"] = {"new_vp1": new_pos}
+            except ValueError:
+                continue
+
+        with open("lookup.js", "w") as out:
+            out.write("const lookup = ")
+            json.dump(lookup, out, indent=2)
+            out.write(";")
 

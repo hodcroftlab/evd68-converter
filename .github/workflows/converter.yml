@@ -1,27 +1,23 @@
 # .github/workflows/converter.yml
-# This is a GitHub Actions workflow file that defines a CI/CD pipeline for converting annotations.
+# GitHub Actions workflow to convert annotations and deploy to GitHub Pages
 
 name: Convert Annotation
 
 on:
-  # Trigger this workflow on a schedule (daily, or adjust as needed)
+  # Run this workflow on a schedule (twice daily)
   schedule:
-    - cron:  '30 5,17 * * *'  # This will run at 5:30 AM and 5:30 PM UTC every day
-  #   - cron: '0 0 * * *'  # This will run at midnight every day
-  
-  # Optionally, trigger on specific push events (e.g., updates to data files)
+    - cron: '30 5,17 * * *'  # At 05:30 and 17:30 UTC every day
+
+  # Also run on push or PR to master branch
   push:
-    # paths:
-    #   - 'data/*'  # Specify paths to data files if applicable
-    #   - 'scripts/*'
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  
-  # Allows you to run this workflow manually from the Actions tab
+
+  # Allow manual triggering
   workflow_dispatch:
 
-  # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -33,74 +29,41 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-# jobs:
-#   # This workflow contains a single job called "build"
-#   deploy:  # generate_plots:
-#     environment:
-#       name: github-pages
-#     # The type of runner that the job will run on
-#     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
-
-#     # Steps represent a sequence of tasks that will be executed as part of the job
-#     steps:
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - name: Checkout code
-#         uses: actions/checkout@v4  # Check out the repository's code
-
-#       - name: Setup Pages
-#         uses: actions/configure-pages@v5
-        
-#       - name: Set up Python
-#         uses: actions/setup-python@v4
-#         with:
-#           python-version: '3.9'  # Specify the Python version to use
-
-#       - name: Install dependencies
-#         run: |
-#           python -m pip install --upgrade pip
-#           pip install -r requirements.txt  # Install the dependencies from requirements.txt
-
-#       # - name: Fetch data and generate plots
-#       #   run: |
-#       #     # Run the Python script to fetch data and generate the plots
-#       #     python pathogen_counts_plotly.py  
-#       #     python pathogen_source_type_plotly.py
-#       #     python pathogen_country_plotly.py
-
-#       # Runs a single command using the runners shell
-#       - name: Run a one-line script
-#         run: echo Hello, world!
-
-#       # - name: Commit and push updated plots
-#       #   run: |
-#       #     git config --global user.name 'GitHub Actions'
-#       #     git config --global user.email 'actions@github.com'
-          
-#       #     # Stage the changes (generated plot files)
-#       #     git add images/* index.html
-
-#       #     # Commit and push the changes back to the repository
-#       #     git commit -m "Update pathogen plots"
-#       #     git push origin master  # Adjust if you're using a different branch
-
-#       # Runs a set of commands using the runners shell
-#       - name: Run a multi-line script
-#         run: |
-#           echo Add other actions to build,
-#           echo test, and deploy your project.
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout the code from the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Set up Python 3.9 environment
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install all Python dependencies from requirements.txt
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # Step 4: Generate lookup.js from the GenBank reference using your script
+      - name: Generate lookup table
+        run: |
+          # Run conversion script and export lookup.js
+          python convert_annotation.py reference.gbk --export
+          # Create output folder for deployment
+          mkdir -p public
+          # Copy lookup.js and index.html to deployment folder
+          cp lookup.js index.html public/
+
+      # Step 5: Upload generated content to GitHub Pages artifact storage
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./public # Replace with the directory containing your webpage files
+          path: ./public  # Folder containing your static website
 
+      # Step 6: Deploy to GitHub Pages from the uploaded artifact
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1

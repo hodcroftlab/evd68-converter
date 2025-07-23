@@ -1,17 +1,17 @@
-document.getElementById('conversionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    fetch('/convert', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+document.getElementById("conversionForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+  
+    const nt = document.getElementById("nt").value;
+    const vp1 = document.getElementById("vp1").value;
+    const resultDiv = document.getElementById("result");
+  
+    if (nt && lookup[`nt_${nt}`]) {
+      const { gene, aa } = lookup[`nt_${nt}`];
+      resultDiv.innerText = `Gene: ${gene}, Amino Acid Position: ${aa}`;
+    } else if (vp1 && lookup[`vp1_${vp1}`]) {
+      const { new_vp1 } = lookup[`vp1_${vp1}`];
+      resultDiv.innerText = `Remapped VP1 Position: ${new_vp1}`;
+    } else {
+      resultDiv.innerText = "No match found.";
+    }
+  });  
