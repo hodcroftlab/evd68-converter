@@ -39,3 +39,11 @@ figure img {
 body, h1, h2, h3, label, input, button, figcaption {
     font-family: Arial, sans-serif;
   }
+  
+.logo {
+    height: 50px;
+    object-fit: contain;
+  }
+.larger-logo {
+    height: 70px;  /* adjust as needed */
+  }

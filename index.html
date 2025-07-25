@@ -4,65 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fermon Annotation Converter</title>
-  <!-- <link rel="stylesheet" href="style.css" /> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    .figures {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: left;
-      gap: 2rem;
-      margin-bottom: 2rem;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
     }
-
-    .figures figure {
-      flex: 1 1 300px;
-      max-width: 400px;
-      text-align: left;
-    }
-
     .figures img {
       width: 100%;
       height: auto;
     }
-    
+    .figures figure {
+      text-align: left;
+    }
+    .logo {
+      height: 50px;
+      margin-right: 1rem;
+    }
+    #result {
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Fermon Annotation Converter</h1>
 
-    <!-- Visuals side-by-side -->
-    <div class="figures">
-        <figure>
-            <img src="images/evd68_genome.svg" alt="EV-D68 genome" style="width: 800px; height: auto;">
-          <figcaption>
-            Figure: EV-D68 genome and virion; adapted from <a href="https://viralzone.expasy.org/97?outline=all_by_species" target="_blank">ViralZone</a>
-          </figcaption>
-        </figure>
+  <!-- Top banner -->
+  <div class="bg-white border-bottom py-3 mb-4">
+    <div class="container d-flex align-items-center justify-content-between flex-wrap">
+      <!-- Left: University logos -->
+      <div class="text-center mb-3 mb-md-0">
+        <div class="d-flex justify-content-start align-items-center mb-2 flex-wrap">
+          <img src="images/SwissTPH.png" alt="SwissTPH" class="logo me-3">
+          <img src="images/Universitat Basel.svg" alt="UniBasel" class="logo me-3" style="height: 150px;">
+          <img src="images/sib.png" alt="SIB" class="logo me-3">
+        </div>
+        <div class="text-start">
+          <strong>Swiss Tropical and Public Health Institute</strong><br>
+          University of Basel<br>
+          Swiss Institute for Bioinformatics
+        </div>
       </div>
-      
+      <div class="bg-white border-bottom py-3 mb-4">
+          <!-- Left: University logos -->
+          <div class="text-center mb-3 mb-md-0">
+            <div class="d-flex justify-content-start align-items-center mb-2 flex-wrap">
+              <img src="images/EVE_logo.svg" alt="EVE" class="logo me-3">
+              <img src="images/nextstrain.png" alt="Nextstrain" class="logo me-3">
+              <img src="images/nextclade.png" alt="Nextclade" class="logo me-3">
+            </div><br>
+            <div class="text-start">
+              Nadia Neuner-Jehle<br>
+              Emma B. Hodcroft<br>
+            </div>
+          </div>
 
-    <!-- Conversion form -->
-    <form id="conversionForm" enctype="multipart/form-data">
-      <div>
-        <label for="nt">Nucleotide Position:</label>
-        <input type="number" id="nt" name="nt" />
-      </div>
-      <div>
-        <label for="vp1">VP1 Position:</label>
-        <input type="number" id="vp1" name="vp1" />
-      </div>
-      <button type="submit">Convert</button>
-    </form>
-
-    <!-- Result display -->
-    <div id="result"></div>
+      </div> 
+    </div>
   </div>
+
+   <!-- Main content -->
+   <div class="container">
+
+    <h1 class="mb-4 text-center">Fermon Annotation Converter</h1>
+
+    <!-- Genome figure -->
+    <div class="figures mb-4">
+      <figure>
+        <img src="images/evd68_genome.svg" alt="EV-D68 genome">
+        <figcaption>
+          <strong>Figure:</strong> EV-D68 genome and virion; adapted from
+          <a href="https://viralzone.expasy.org/97?outline=all_by_species" target="_blank">ViralZone</a> and 
+          <a href="https://nextstrain.org/groups/hodcroftlab/enterovirus/d68/genome" target="_blank">Nextstrain</a>.
+        </figcaption>
+      </figure>
+    </div>
+    <!-- Intro text -->
+    <div class="mb-4">
+      <p> <br>
+        <h3 class="text-left mt-4">Converter Tool</h3>
+        The <strong>Fermon strain</strong> is widely used as the reference for annotating the genome of Enterovirus D68 (EV-D68).<br>
+        Structural studies have shown that the first 12 amino acids previously annotated as part of the VP1 protein actually belong to the C-terminus of VP3 
+        (<a href="https://doi.org/10.1016/j.meegid.2021.104992" target="_blank">Fang et al., 2021</a>).<br>
+        This tool helps convert positions between the original Fermon annotation and the updated genome structure.<br>
+        <h4 class="text-left mt-4">Convert between old and new VP1 annotations</h4>
+        Enter a nucleotide or amino acid position below to get started.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form id="conversionForm" class="mb-4">
+      <div class="mb-3">
+        <label for="nt" class="form-label">Nucleotide Position:</label>
+        <input type="number" id="nt" name="nt" class="form-control" />
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="vp1" class="form-label">VP1 Position:</label>
+        <input type="number" id="vp1" name="vp1" class="form-control" placeholder="VP1 Position" />
+      </div> -->
+
+      <div class="row mb-3">
+        <div class="col-md-6"><br>
+          <label class="form-label">Fermon (GenBank):</label>
+          <select id="fermon_gene" class="form-select mb-2">
+            <option selected disabled>Select Gene</option>
+            <option>VP4</option>
+            <option>VP2</option>
+            <option>VP3</option>
+            <option>VP1</option>
+            <option>2A</option>
+            <option>2B</option>
+            <option>2C</option>
+            <option>3A</option>
+            <option>3B</option>
+            <option>3C</option>
+            <option>3D</option>
+          </select>
+          <input type="number" id="fermon_pos" class="form-control" placeholder="Amino Acid Position" />
+        </div>
+        <div class="col-md-6"><br>
+          <label class="form-label">Fermon (Corrected):</label>
+          <select id="new_fermon_gene" class="form-select mb-2">
+            <option selected disabled>Select Gene</option>
+            <option>VP4</option>
+            <option>VP2</option>
+            <option>VP3</option>
+            <option>VP1</option>
+            <option>2A</option>
+            <option>2B</option>
+            <option>2C</option>
+            <option>3A</option>
+            <option>3B</option>
+            <option>3C</option>
+            <option>3D</option>
+            <!-- Add other genes as needed -->
+          </select>
+          <input type="number" id="new_fermon_pos" class="form-control" placeholder="Amino Acid Position" />
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-success me-2">Convert</button>
+        <button type="button" class="btn btn-danger" onclick="clearForm()">Clear</button>
+      </div>
+    </form>
+    
+    <!-- Result display -->
+    <div id="result" class="alert alert-info" role="alert"></div>    
 
   <!-- Scripts -->
   <script src="lookup.js"></script>
   <script src="static/js/script.js"></script>
-  <script src="static/css/style.css"></script>
 </body>
 </html>

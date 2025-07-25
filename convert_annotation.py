@@ -6,6 +6,8 @@ from pathlib import Path
 from typing import Optional
 from BCBio import GFF
 import json
+import argparse
+
 
 class FermonAnnotation:
     def __init__(self, reference_path: str):
@@ -24,7 +26,7 @@ class FermonAnnotation:
         for f in self.ref_record.features:
             if f.type != "source" and "product" in f.qualifiers:
                 gene = f.qualifiers["product"][0]
-                for pos in range(int(f.location.start), int(f.location.end)):
+                for pos in range(int(f.location.start)+1, int(f.location.end)+1):
                     mapping[pos] = gene
         return mapping
 
@@ -37,7 +39,7 @@ class FermonAnnotation:
         if not feature:
             return None
 
-        codon_offset = nt_pos - int(feature.location.start)
+        codon_offset = nt_pos - int(feature.location.start)-1
         aa_pos = codon_offset // 3 + 1  # 1-based
         return (gene, aa_pos)
 
@@ -84,52 +86,86 @@ class FermonAnnotation:
         alignment = AlignIO.read(aligned_path, "fasta")
         return {record.id: str(record.seq) for record in alignment}
 
-if __name__ == "__main__":
-    import argparse
+def write_lookup_js(data, output_path):
+    with open(output_path, "w") as out:
+        out.write("const lookup = ")
+        json.dump(data, out, indent=2)
+        out.write(";")
 
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("reference", help="GenBank file for Fermon reference")
     parser.add_argument("--nt", type=int, help="Nucleotide position to query")
     parser.add_argument("--vp1", type=int, help="VP1 position to remap")
-    parser.add_argument("--query", help="Optional FASTA file to align")
     parser.add_argument("--export", action="store_true", help="Export lookup to lookup.js")
     args = parser.parse_args()
 
     ann = FermonAnnotation(args.reference)
 
     if args.nt is not None:
-        gene,aa = ann.get_gene_for_nt(args.nt)
-        print(f"Nucleotide {args.nt} → Gene: {gene}, Amino Acid Position: {aa}")
+        gene_aa = ann.get_gene_for_nt(args.nt)
+        if gene_aa:
+            gene, aa = gene_aa
+            print(f"Nucleotide {args.nt} → Gene: {gene}, Amino Acid Position: {aa}")
+        else:
+            print(f"Nucleotide {args.nt} not mapped to any gene.")
 
     if args.vp1 is not None:
-        gene, aa = ann.get_new_vp1_position(args.vp1)
-        print(f"VP1 position {args.vp1} → Gene: {gene}, Amino Acid Position: {aa}")
-
-    if args.query:
-        with tempfile.NamedTemporaryFile("w+", suffix=".fa") as out:
-            ann.align_to_fermon(args.query, out.name)
-            aligned = ann.parse_alignment(out.name)
-            
-        print("Sequence aligned to Fermon")
+        try:
+            gene, aa = ann.get_new_vp1_position(args.vp1)
+            for nt in ann.nt_to_gene:
+                if ann.get_gene_for_nt(nt) == (gene, aa):
+                    print(f"VP1 position {args.vp1} → Gene: {gene}, AA: {aa}, Nucleotide: {nt}")
+                    break
+            else:
+                print(f"VP1 position {args.vp1} → Gene: {gene}, AA: {aa} (no matching nt)")
+        except ValueError as e:
+            print(f"Error: {e}")
 
     if args.export:
+        # Derive vp1_<pos> and update gene_... mappings
+        vp3_len = (int(ann.features["VP3"].location.end) - int(ann.features["VP3"].location.start)) // 3
+        vp1_len = (int(ann.features["VP1"].location.end) - int(ann.features["VP1"].location.start)) // 3
+        
         lookup = {}
 
-        for nt_pos in sorted(ann.nt_to_gene.keys()):
-            gene_info = ann.get_gene_for_nt(nt_pos)
-            if gene_info:
-                gene, aa_pos = gene_info
-                lookup[f"nt_{nt_pos}"] = {"gene": gene, "aa": aa_pos}
-
-        for vp1 in range(1, 309):  # Adjust upper bound if needed
-            try:
-                gene, aa = ann.get_new_vp1_position(vp1)
-                lookup[f"vp1_{vp1}"] = {"gene": gene, "aa": aa}
-            except ValueError:
+        # Step 1: Build new annotation from GenBank (corrected)
+        for nt in sorted(ann.nt_to_gene.keys()):
+            new_info = ann.get_gene_for_nt(nt)
+            if not new_info:
                 continue
 
-        with open("lookup.js", "w") as out:
-            out.write("const lookup = ")
-            json.dump(lookup, out, indent=2)
-            out.write(";")
+            new_gene, new_aa = new_info
 
+            # Step 2: Check if this nt was originally part of VP1 in old annotation
+            # → get old VP1 position (if any)
+            rev_key = f"gene_{new_gene}_{new_aa}"
+            fermon_pos = None
+            old_gene = new_gene
+            old_aa = new_aa
+
+            if rev_key in lookup and "vp1" in lookup[rev_key]:
+                fermon_pos = lookup[rev_key]["vp1"]
+            else:
+                # Try mapping back via get_old_vp1_position
+                try:
+                    for old_vp1 in range(1, 310):
+                        g, a = ann.get_new_vp1_position(old_vp1)
+                        if (g, a) == (new_gene, new_aa):
+                            old_gene = "VP1"
+                            old_aa = old_vp1
+                            break
+                except:
+                    pass  # no match
+
+            lookup[f"nt_{nt}"] = {
+                "nt": nt,
+                "fermon": { "gene": old_gene, "aa": old_aa },
+                "corrected": { "gene": new_gene, "aa": new_aa }
+            }
+
+        write_lookup_js(lookup, "lookup.js")
+        print("Exported lookup.js")
+
+if __name__ == "__main__":
+    main()
