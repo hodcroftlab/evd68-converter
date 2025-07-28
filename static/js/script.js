@@ -28,9 +28,9 @@ function updateFromNucleotide() {
   document.getElementById("new_fermon_pos").value = corrected.aa;
 
   if (fermon.gene === corrected.gene && fermon.aa === corrected.aa) {
-    resultDiv.innerText = `nt ${nt} → ${fermon.gene} ${fermon.aa} (unchanged)`;
+    resultDiv.innerHTML = `Nucleotide position <strong>${nt}</strong> → <strong>${fermon.gene} ${fermon.aa}</strong> (unchanged)`;
   } else {
-    resultDiv.innerText = `nt ${nt} → Fermon: ${fermon.gene} ${fermon.aa} → Corrected: ${corrected.gene} ${corrected.aa}`;
+    resultDiv.innerHTML = `Nucleotide position <strong>${nt}</strong> → Fermon: <strong>${fermon.gene} ${fermon.aa}</strong> → Corrected: <strong>${corrected.gene} ${corrected.aa}</strong>`;
   }
 }
 function clearForm() {
@@ -65,9 +65,9 @@ function updateFromFermonOld() {
       document.getElementById("new_fermon_pos").value = entry.corrected.aa;
 
       if (entry.fermon.gene === entry.corrected.gene && entry.fermon.aa === entry.corrected.aa) {
-        resultDiv.innerText = `No change: ${gene} ${aa} → nt ${entry.nt} → still ${gene} ${aa}`;
+        resultDiv.innerHTML = `No change: <strong>${gene} ${aa}</strong> → nt ${entry.nt} → still <strong>${gene} ${aa}</strong>`;
       } else {
-        resultDiv.innerText = `Fermon: ${gene} ${aa} → nt ${entry.nt} → Corrected: ${entry.corrected.gene} ${entry.corrected.aa}`;
+        resultDiv.innerHTML = `Fermon: <strong>${gene} ${aa}</strong> → nt ${entry.nt} → Corrected: <strong>${entry.corrected.gene} ${entry.corrected.aa}</strong>`;
       }
       break;
     }
@@ -89,20 +89,22 @@ function updateFromCorrected() {
 
   for (const key in lookup) {
     const entry = lookup[key];
-    if (
-      entry.corrected?.gene === gene &&
-      entry.corrected?.aa === aa
-    ) {
+    if (entry.corrected?.gene === gene && entry.corrected?.aa === aa) {
       document.getElementById("nt").value = entry.nt;
       document.getElementById("fermon_gene").value = entry.fermon.gene;
       document.getElementById("fermon_pos").value = entry.fermon.aa;
-      resultDiv.innerText = `Corrected: ${gene} ${aa} → nt ${entry.nt} → Fermon: ${entry.fermon.gene} ${entry.fermon.aa}`;
+
+      if (entry.corrected?.gene === entry.fermon.gene && entry.corrected?.aa === entry.fermon.aa) {
+        resultDiv.innerHTML = `No change: <strong>${gene} ${aa}</strong> → nt ${entry.nt} → still <strong>${gene} ${aa}</strong>`;
+      } else {
+        resultDiv.innerHTML = `Corrected: <strong>${gene} ${aa}</strong> → nt ${entry.nt} → Fermon: <strong>${entry.fermon.gene} ${entry.fermon.aa}</strong>`;
+      }
       found = true;
       break;
     }
   }
 
   if (!found) {
-    resultDiv.innerText = "Corrected gene/AA combination not found.";
+    resultDiv.innerText = "Corrected gene/AA combination not found. Please provide a valid position.";
   }
 }
