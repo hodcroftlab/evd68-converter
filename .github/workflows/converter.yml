@@ -4,9 +4,9 @@
 name: Convert Annotation
 
 on:
-  # Run this workflow on a schedule (twice daily)
+  # Run this workflow on a schedule
   schedule:
-    - cron: '30 5,17 * * *'  # At 05:30 and 17:30 UTC every day
+    - cron: '30 8 * * 0'  # At 08:30 UTC every Sunday
 
   # Also run on push or PR to master branch
   push:

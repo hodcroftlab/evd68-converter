@@ -4,9 +4,9 @@ This web tool lets you convert between the **original Fermon annotation** and th
 
 ## 🔍 Features
 
-- Enter a **nucleotide position** to view the corresponding gene and amino acid in both annotations.
-- Enter a **Fermon (GenBank)** gene and amino acid to see the corrected annotation.
-- Enter a **Corrected (Fermon.2)** gene and amino acid to find the original Fermon position.
+- Enter a **Nucleotide Position** to view the corresponding gene and amino acid in both annotations.
+- Enter a **Fermon (GenBank)** gene and amino acid to see the corrected annotation and nucleotide position.
+- Enter a **Fermon (Corrected)** gene and amino acid to find the original Fermon position and nucleotide position.
 - Visualize changes caused by the VP1/VP3 shift.
 
 ## 🚀 How to Use
@@ -20,5 +20,4 @@ This web tool lets you convert between the **original Fermon annotation** and th
 
 ## 🌐 Hosting
 
-This static site is hosted via **GitHub Pages** on the **`ppages`** branch.  
-Make sure to deploy changes to that branch to update the live version.
+This static site is hosted via **GitHub Pages** on the **`master`** branch.
