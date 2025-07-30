@@ -13,9 +13,9 @@ class FermonAnnotation:
     def __init__(self, reference_path: str):
         self.ref_record = SeqIO.read(reference_path, "genbank")
         self.features = {
-        f.qualifiers.get("product", ["unknown"])[0]: f
+        f.qualifiers.get("gene", ["unknown"])[0]: f
         for f in self.ref_record.features
-        if f.type not in {"source"} and "product" in f.qualifiers
+        if f.type not in {"source"} and "gene" in f.qualifiers
     }
         self.nt_to_gene = self._build_nt_map()
         self.vp1_start = self.features["VP1"].location.start
@@ -24,8 +24,8 @@ class FermonAnnotation:
         """Build map from nucleotide position to gene name."""
         mapping = {}
         for f in self.ref_record.features:
-            if f.type != "source" and "product" in f.qualifiers:
-                gene = f.qualifiers["product"][0]
+            if f.type != "source" and "gene" in f.qualifiers:
+                gene = f.qualifiers["gene"][0]
                 for pos in range(int(f.location.start)+1, int(f.location.end)+1):
                     mapping[pos] = gene
         return mapping

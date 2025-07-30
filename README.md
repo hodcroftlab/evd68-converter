@@ -1,6 +1,6 @@
 # Fermon Annotation Converter
 
-This web tool lets you convert between the **original Fermon annotation** and the **corrected genome annotation** for *Enterovirus D68 (EV-D68)*.
+This web tool lets you convert between the **original Fermon (AY426531.1) annotation** and the **corrected genome annotation** for *Enterovirus D68 (EV-D68)*.
 
 ## 🔍 Features
 
