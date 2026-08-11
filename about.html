@@ -194,7 +194,7 @@
 <!-- Footer -->
 <footer style="background-color: #f9f9f9; padding: 20px; border-top: 1px solid #ccc; text-align: center; margin-top: 20px;">
     <div class="footer-content">
-        <p>© 2025 Hodcroft Lab. All rights reserved.</p>
+        <p>© 2025-<span id="current-year"></span> Hodcroft Lab. All rights reserved.</p>
       <div class="social-links" style="margin-top: 10px; display: flex; justify-content: center; align-items: flex-end; gap: 20px;">
         <a href="https://hodcroftlab.github.io/hodcroftlab/" target="_blank" style="display: flex; align-items: center; text-decoration: none; margin-bottom: 2px;">
           <img src="images/EVE_logo.svg" alt="Hodcroftlab Logo" style="width: 24px; height: 24px; margin-right: 5px;">
@@ -211,5 +211,8 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
-</html>  
+</html>
