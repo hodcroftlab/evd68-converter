@@ -141,9 +141,21 @@
 
       <!-- Form -->
       <form id="conversionForm" class="mb-4">
-        <div class="mb-3">
-          <label for="nt" class="form-label">Nucleotide Position:</label>
-          <input type="number" id="nt" name="nt" class="form-control" />
+        <div class="row mb-3 g-3">
+          <div class="col-md-6 col-lg-4">
+            <label for="nt" class="form-label">Nucleotide Position:</label>
+            <input type="number" id="nt" name="nt" class="form-control" />
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <label class="form-label">Polyprotein Region:</label>
+            <select id="p_segment" class="form-select mb-2">
+              <option selected disabled>Select Segment</option>
+              <option>P1</option>
+              <option>P2</option>
+              <option>P3</option>
+            </select>
+            <input type="number" id="p_pos" class="form-control" placeholder="Amino Acid Position" />
+          </div>
         </div>
 
         <div class="row mb-3 g-3">
@@ -182,16 +194,6 @@
               <option>3D</option>
             </select>
             <input type="number" id="new_fermon_pos" class="form-control" placeholder="Amino Acid Position" />
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <label class="form-label">P1 / P2 / P3:</label>
-            <select id="p_segment" class="form-select mb-2">
-              <option selected disabled>Select Segment</option>
-              <option>P1</option>
-              <option>P2</option>
-              <option>P3</option>
-            </select>
-            <input type="number" id="p_pos" class="form-control" placeholder="Amino Acid Position" />
           </div>
         </div>
 
