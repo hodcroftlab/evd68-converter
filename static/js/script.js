@@ -47,12 +47,12 @@ function describeEntry(entry) {
   const unchanged = fermon.gene === corrected.gene && fermon.aa === corrected.aa;
 
   let html = `Nucleotide <strong>${entry.nt}</strong> → `;
+  html += `<strong>${p.segment} ${p.aa}</strong> → `;
   if (unchanged) {
     html += `<strong>${fermon.gene} ${fermon.aa}</strong> (unchanged)`;
   } else {
     html += `Fermon (GenBank): <strong>${fermon.gene} ${fermon.aa}</strong> → Fermon (Corrected): <strong>${corrected.gene} ${corrected.aa}</strong>`;
   }
-  html += ` → <strong>${p.segment} ${p.aa}</strong>`;
   return html;
 }
 
