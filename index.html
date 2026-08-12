@@ -88,7 +88,7 @@
     <!-- Top banner -->
     <div class="header">
       <div class="logo-container">
-          <a href="https://hodcroftlab.github.io/hodcroftlab/" class="logo" target="_blank">
+          <a href="https://eve-lab.org/" class="logo" target="_blank">
               <img src="images/EVE_logo.svg" alt="EVE" style="height: 50px;">
           </a>
           <a href="https://www.swisstph.ch" class="logo" target="_blank">
@@ -141,13 +141,25 @@
 
       <!-- Form -->
       <form id="conversionForm" class="mb-4">
-        <div class="mb-3">
-          <label for="nt" class="form-label">Nucleotide Position:</label>
-          <input type="number" id="nt" name="nt" class="form-control" />
+        <div class="row mb-3 g-3">
+          <div class="col-md-6 col-lg-4">
+            <label for="nt" class="form-label">Nucleotide Position:</label>
+            <input type="number" id="nt" name="nt" class="form-control" />
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <label class="form-label">Polyprotein Region:</label>
+            <select id="p_segment" class="form-select mb-2">
+              <option selected disabled>Select Segment</option>
+              <option>P1</option>
+              <option>P2</option>
+              <option>P3</option>
+            </select>
+            <input type="number" id="p_pos" class="form-control" placeholder="Amino Acid Position" />
+          </div>
         </div>
 
-        <div class="row mb-3">
-          <div class="col-md-6">
+        <div class="row mb-3 g-3">
+          <div class="col-md-6 col-lg-4">
             <label class="form-label">Fermon (GenBank):</label>
             <select id="fermon_gene" class="form-select mb-2">
               <option selected disabled>Select Gene</option>
@@ -165,7 +177,7 @@
             </select>
             <input type="number" id="fermon_pos" class="form-control" placeholder="Amino Acid Position" />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-lg-4">
             <label class="form-label">Fermon (Corrected):</label>
             <select id="new_fermon_gene" class="form-select mb-2">
               <option selected disabled>Select Gene</option>
@@ -205,20 +217,23 @@
 <!-- Footer -->
 <footer style="background-color: #f9f9f9; padding: 20px; border-top: 1px solid #ccc; text-align: center; margin-top: 20px;">
   <div class="footer-content">
-    <p style="color: #666;">© 2025 Hodcroft Lab. All rights reserved.</p>
-    <div class="social-links" style="margin-top: 10px; display: flex; justify-content: center; align-items: flex-end; gap: 20px;">
-      <a href="https://hodcroftlab.github.io/hodcroftlab/" target="_blank" style="display: flex; align-items: center; text-decoration: none; margin-bottom: 2px;">
+    <p style="color: #666;">© 2025-<span id="current-year"></span> Hodcroft Lab. All rights reserved.</p>
+    <div class="social-links" style="margin-top: 10px; display: flex; justify-content: center; align-items: baseline; gap: 20px;">
+      <a href="https://eve-lab.org/" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
         <img src="images/EVE_logo.svg" alt="Hodcroftlab Logo" style="width: 24px; height: 24px; margin-right: 5px;">
-        <span style="font-size: 16px; color: #4a90e2;">Hodcroftlab</span>
+        <span style="font-size: 16px; color:#569faf;">Hodcroftlab</span>
       </a>
-      <a href="https://github.com/hodcroftlab" target="_blank" style="display: flex; align-items: center; text-decoration: none; margin-bottom: 2px;">
+      <a href="https://github.com/hodcroftlab" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
         <img src="images/github.svg" alt="GitHub Logo" style="width: 24px; height: 24px; margin-right: 5px;">
         <span style="font-size: 16px; color: #555;">GitHub</span>
       </a>
-      <a href="https://www.swisstph.ch/en/about/mpi/epidemiology-and-viral-evolution" target="_blank" 
+      <a href="https://www.swisstph.ch/en/about/mpi/epidemiology-and-viral-evolution" target="_blank"
          style="display: flex; align-items: center; text-decoration: none;">
-        <img src="images/SwissTPH.png" alt="Swiss TPH Logo" style="height: 24px;">
+        <img src="images/SwissTPH.png" alt="Swiss TPH Logo" style="height: 35px;">
       </a>
     </div>
   </div>
 </footer>
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>

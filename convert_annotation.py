@@ -19,6 +19,40 @@ class FermonAnnotation:
     }
         self.nt_to_gene = self._build_nt_map()
         self.vp1_start = self.features["VP1"].location.start
+        self.p_bounds = self._build_p_bounds()
+
+    P_GROUPS = {
+        "P1": ["VP4", "VP2", "VP3", "VP1"],
+        "P2": ["2A", "2B", "2C"],
+        "P3": ["3A", "3B", "3C", "3D"],
+    }
+
+    def _build_p_bounds(self):
+        """Compute (start, end) nucleotide bounds (0-based half-open) for P1/P2/P3."""
+        bounds = {}
+        for segment, genes in self.P_GROUPS.items():
+            starts = [int(self.features[g].location.start) for g in genes]
+            ends = [int(self.features[g].location.end) for g in genes]
+            bounds[segment] = (min(starts), max(ends))
+        return bounds
+
+    def get_p_segment_for_nt(self, nt_pos: int) -> Optional[tuple]:
+        """Return (segment, aa_pos) for P1/P2/P3, or None if nt is outside all segments."""
+        for segment, (start, end) in self.p_bounds.items():
+            if start < nt_pos <= end:
+                aa_pos = (nt_pos - start - 1) // 3 + 1
+                return (segment, aa_pos)
+        return None
+
+    def get_nt_for_p_segment(self, segment: str, aa_pos: int) -> Optional[int]:
+        """Return the first nucleotide of the codon for a given P1/P2/P3 amino acid position."""
+        if segment not in self.p_bounds:
+            return None
+        start, end = self.p_bounds[segment]
+        seg_len = (end - start) // 3
+        if not (1 <= aa_pos <= seg_len):
+            return None
+        return start + (aa_pos - 1) * 3 + 1
 
     def _build_nt_map(self):
         """Build map from nucleotide position to gene name."""
@@ -158,11 +192,18 @@ def main():
                 except:
                     pass  # no match
 
-            lookup[f"nt_{nt}"] = {
+            entry = {
                 "nt": nt,
                 "fermon": { "gene": old_gene, "aa": old_aa },
                 "corrected": { "gene": new_gene, "aa": new_aa }
             }
+
+            p_info = ann.get_p_segment_for_nt(nt)
+            if p_info:
+                p_segment, p_aa = p_info
+                entry["p"] = { "segment": p_segment, "aa": p_aa }
+
+            lookup[f"nt_{nt}"] = entry
 
         write_lookup_js(lookup, "lookup.js")
         print("Exported lookup.js")
