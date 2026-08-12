@@ -5,6 +5,7 @@ This web tool lets you convert between the **original Fermon (AY426531.1) annota
 ## 🔍 Features
 
 - Enter a **Nucleotide Position** to view the corresponding gene and amino acid in both annotations.
+- Enter a **P1/P2/P3 Polyprotein Position** to view the corresponding gene and amino acid in both annotations.
 - Enter a **Fermon (GenBank)** gene and amino acid to see the corrected annotation and nucleotide position.
 - Enter a **Fermon (Corrected)** gene and amino acid to find the original Fermon position and nucleotide position.
 - Visualize changes caused by the VP1/VP3 shift.
@@ -13,7 +14,8 @@ This web tool lets you convert between the **original Fermon (AY426531.1) annota
 
 1. Open the site: [https://hodcroftlab.github.io/evd68-converter/](https://hodcroftlab.github.io/evd68-converter/)
 2. Use the input fields to:
-   - Enter a nucleotide position  
+   - Enter a nucleotide position
+   - OR enter a Polyprotein position  
    - OR enter Fermon annotation (gene + AA)  
    - OR enter Corrected annotation (gene + AA)
 3. The matching positions and relationships will be displayed below the form.
